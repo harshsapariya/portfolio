@@ -74,7 +74,7 @@ footer { text-align:center; padding:30px; color:var(--muted); border-top:1px sol
 /* EDUCATION */
 .education-wrapper { position:relative; margin-left:20px; padding-left:30px; border-left:2px solid rgba(0,255,156,0.3); }
 .edu-item { position:relative; margin-bottom:40px; }
-.edu-dot { position:absolute; left:-41px; top:8px; width:14px; height:14px; background: var(--green); border-radius:50%; box-shadow:0 0 12px rgba(0,255,156,0.6); }
+.edu-dot { position:absolute; left:-38px; top:28px; width:14px; height:14px; background: var(--green); border-radius:50%; box-shadow:0 0 12px rgba(0,255,156,0.6); }
 .edu-card { background: var(--bg-card); padding:20px 24px; border-radius:10px; border:1px solid rgba(0,255,156,0.15); }
 .edu-card h3 { color: var(--green); margin-bottom:6px; font-size:1.1rem; }
 .edu-meta { display:block; font-size:0.9rem; color: var(--muted); margin-bottom:10px; }
