@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -206,13 +205,13 @@
       <input type="text" id="company" name="company" tabindex="-1" autocomplete="off" style="display:none;">
 
       <label for="name">Name</label>
-      <input type="text" id="name" required>
+      <input type="text" id="name" name="from_name" required>
 
       <label for="email">Email</label>
-      <input type="email" id="email" required>
+      <input type="email" id="email" name="from_email" required>
 
       <label for="message">Message</label>
-      <textarea id="message" rows="4" required></textarea>
+      <textarea id="message" name="message" rows="4" required></textarea>
 
       <button type="submit" class="btn-portfolio">Send</button>
     </form>
@@ -226,7 +225,5 @@
 <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 <script src="script.js"></script>
 
-
-
-
-
+</body>
+</html>
