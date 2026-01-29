@@ -28,17 +28,14 @@ for (let i = 0; i < dotCount; i++) {
 
 function animateDots() {
   ctx.clearRect(0, 0, width, height);
-
   dots.forEach(dot => {
     dot.x += dot.speed;
     if (dot.x > width) dot.x = 0;
-
     ctx.beginPath();
     ctx.arc(dot.x, dot.y, dot.radius, 0, Math.PI * 2);
     ctx.fillStyle = dot.color;
     ctx.fill();
   });
-
   requestAnimationFrame(animateDots);
 }
 
@@ -86,6 +83,7 @@ const modal = document.getElementById("contactModal");
 const openBtn = document.getElementById("openModal");
 const closeBtn = document.querySelector(".modal .close");
 const form = document.getElementById("contactForm");
+const formStatus = document.getElementById("formStatus");
 
 if (openBtn) openBtn.onclick = () => modal.style.display = "block";
 if (closeBtn) closeBtn.onclick = () => modal.style.display = "none";
@@ -94,30 +92,49 @@ window.addEventListener("click", e => {
   if (e.target === modal) modal.style.display = "none";
 });
 
-/* ------------------ EmailJS Contact Form ------------------ */
-(function () {
-  emailjs.init("SSUF_MHYdEBoc-cq-"); // <-- replace
-})();
+/* ------------------ EmailJS Contact Form with Spam Protection ------------------ */
+emailjs.init("SSUF_MHYdEBoc-cq-"); 
+
+// Rate limit: 1 message per 30 seconds
+let lastSentTime = 0;
 
 if (form) {
   form.addEventListener("submit", function (e) {
     e.preventDefault();
 
+    const now = Date.now();
+    if (now - lastSentTime < 30000) {
+      formStatus.textContent = "⚠️ Please wait 30 seconds before sending another message.";
+      formStatus.style.color = "orange";
+      return;
+    }
+
+    // Honeypot field check
+    const honeypot = document.getElementById("company").value;
+    if (honeypot) {
+      formStatus.textContent = "⚠️ Spam detected!";
+      formStatus.style.color = "red";
+      return;
+    }
+
+    // Send via EmailJS
     emailjs.sendForm(
-      "service_nlbq74m",     // <-- replace
-      "template_0bhiu0wD",    // <-- replace
+      "service_nlbq74m",   
+      "template_0bhiu0w",  
       this
     ).then(
-      function () {
-        alert("✅ Message sent successfully!");
+      () => {
+        formStatus.textContent = "✅ Message sent successfully!";
+        formStatus.style.color = "green";
         form.reset();
         modal.style.display = "none";
+        lastSentTime = Date.now();
       },
-      function (error) {
-        alert("❌ Failed to send message. Try again.");
+      (error) => {
+        formStatus.textContent = "❌ Failed to send message. Try again.";
+        formStatus.style.color = "red";
         console.error("EmailJS Error:", error);
       }
     );
   });
 }
-
