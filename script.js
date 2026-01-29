@@ -104,7 +104,7 @@ if (form) {
     e.preventDefault();
 
     emailjs.sendForm(
-      "YOUR_SERVICE_IDservice_nlbq74m",     // <-- replace
+      "service_nlbq74m",     // <-- replace
       "template_0bhiu0wD",    // <-- replace
       this
     ).then(
