@@ -88,6 +88,18 @@ footer { text-align:center; padding:30px; color:var(--muted); border-top:1px sol
 .project-card ul { padding-left:18px; margin:0; }
 .project-card li { margin-bottom:8px; font-size:0.9rem; color: var(--text); }
 
+/* Contact section links */
+#contact a {
+  color: var(--green);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+#contact a:hover {
+  color: #00ffcc;
+  text-decoration: underline;
+}
+
 /* MODAL */
 .modal { display:none; position:fixed; z-index:200; left:0; top:0; width:100%; height:100%; overflow:auto; background-color:rgba(0,0,0,0.7); }
 .modal-content { background-color: var(--bg-card); margin:10% auto; padding:30px; border-radius:12px; width:90%; max-width:450px; color: var(--text); border:1px solid rgba(0,255,156,0.15); }
