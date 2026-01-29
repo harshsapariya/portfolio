@@ -94,19 +94,30 @@ window.addEventListener("click", e => {
   if (e.target === modal) modal.style.display = "none";
 });
 
+/* ------------------ EmailJS Contact Form ------------------ */
+(function () {
+  emailjs.init("SSUF_MHYdEBoc-cq-"); // <-- replace
+})();
+
 if (form) {
-  form.addEventListener("submit", e => {
+  form.addEventListener("submit", function (e) {
     e.preventDefault();
 
-    const name = document.getElementById("name").value;
-    const email = document.getElementById("email").value;
-    const message = document.getElementById("message").value;
-
-    alert(
-      `Thank you, ${name}! Your message has been sent.\n\nEmail: ${email}\nMessage: ${message}`
+    emailjs.sendForm(
+      "YOUR_SERVICE_IDservice_nlbq74m",     // <-- replace
+      "template_0bhiu0wD",    // <-- replace
+      this
+    ).then(
+      function () {
+        alert("✅ Message sent successfully!");
+        form.reset();
+        modal.style.display = "none";
+      },
+      function (error) {
+        alert("❌ Failed to send message. Try again.");
+        console.error("EmailJS Error:", error);
+      }
     );
-
-    form.reset();
-    modal.style.display = "none";
   });
 }
+
