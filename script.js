@@ -93,7 +93,7 @@ window.addEventListener("click", e => {
 });
 
 /* ------------------ EmailJS Contact Form with Spam Protection ------------------ */
-emailjs.init("SSUF_MHYdEBoc-cq-"); 
+emailjs.init("SSUF_MHYdEBoc-cq-"); // user id
 
 // Rate limit: 1 message per 30 seconds
 let lastSentTime = 0;
@@ -119,8 +119,8 @@ if (form) {
 
     // Send via EmailJS
     emailjs.sendForm(
-      "service_nlbq74m",   
-      "template_0bhiu0w",  
+      "service_nlbq74m",   // service id
+      "template_0bhiu0w",  // template id
       this
     ).then(
       () => {
