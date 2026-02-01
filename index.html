@@ -13,13 +13,27 @@
 </head>
 <body>
 
+<!-- Loading Skeleton -->
+<div id="loadingSkeleton" class="loading-skeleton">
+  <div class="skeleton-logo"></div>
+  <div class="skeleton-hero">
+    <div class="skeleton-title"></div>
+    <div class="skeleton-subtitle"></div>
+  </div>
+</div>
+
 <!-- Canvas for animated background -->
 <canvas id="bgCanvas"></canvas>
 
 <!-- NAVBAR -->
 <nav>
   <div class="logo" id="animatedLogo">&gt;_ root@HS</div>
-  <div>
+  <div class="hamburger" id="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  <div class="nav-links" id="navLinks">
     <a href="#about">About</a>
     <a href="#skills">Skills</a>
     <a href="#experience">Experience</a>
@@ -32,7 +46,7 @@
 <!-- HERO -->
 <header>
   <h1>&gt; Harsh Sapariya<span class="cursor"></span></h1>
-  <p>Security Researcher | VAPT | Web & Network Pentesting</p>
+  <p id="typingText"></p>
   <div class="header-buttons">
     <a href="assets/resume.pdf" download class="btn">Download Resume</a>
   </div>

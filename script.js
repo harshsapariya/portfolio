@@ -1,3 +1,11 @@
+/* ------------------ Loading Skeleton ------------------ */
+window.addEventListener('load', () => {
+  const skeleton = document.getElementById('loadingSkeleton');
+  setTimeout(() => {
+    skeleton.style.display = 'none';
+  }, 2000); // Hide after 2 seconds
+});
+
 /* ------------------ Animated Background Dots ------------------ */
 const canvas = document.getElementById('bgCanvas');
 const ctx = canvas.getContext('2d');
@@ -78,6 +86,49 @@ function animateDecrypt() {
 
 animateDecrypt();
 
+/* ------------------ Logo Click to Scroll to Top ------------------ */
+if (logoEl) {
+  logoEl.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+}
+
+/* ------------------ Hamburger Menu Toggle ------------------ */
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.getElementById('navLinks');
+
+if (hamburger) {
+  hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+  });
+  
+  // Close menu when clicking on a link
+  const links = navLinks.querySelectorAll('a');
+  links.forEach(link => {
+    link.addEventListener('click', () => {
+      navLinks.classList.remove('active');
+    });
+  });
+}
+
+/* ------------------ Typing Effect on Hero ------------------ */
+const typingText = document.getElementById('typingText');
+const textToType = "Security Researcher | VAPT | Web & Network Pentesting";
+let charIndex = 0;
+
+function typeEffect() {
+  if (charIndex < textToType.length) {
+    typingText.textContent += textToType.charAt(charIndex);
+    charIndex++;
+    setTimeout(typeEffect, 80); // Adjust speed here (lower = faster)
+  }
+}
+
+// Start typing after page loads
+window.addEventListener('load', () => {
+  setTimeout(typeEffect, 500); // Start after 0.5 seconds
+});
+
 /* ------------------ Modal Popup ------------------ */
 const modal = document.getElementById("contactModal");
 const openBtn = document.getElementById("openModal");
@@ -93,7 +144,7 @@ window.addEventListener("click", e => {
 });
 
 /* ------------------ EmailJS Contact Form with Spam Protection ------------------ */
-emailjs.init("SSUF_MHYdEBoc-cq-"); // user id
+emailjs.init("SSUF_MHYdEBoc-cq-"); 
 
 // Rate limit: 1 message per 30 seconds
 let lastSentTime = 0;
@@ -119,8 +170,8 @@ if (form) {
 
     // Send via EmailJS
     emailjs.sendForm(
-      "service_nlbq74m",   // service id
-      "template_0bhiu0w",  // template id
+      "service_nlbq74m",   
+      "template_0bhiu0w",  
       this
     ).then(
       () => {
