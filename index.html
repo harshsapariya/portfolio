@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Harsh Sapariya | Security Researcher</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- Loading Skeleton -->
+<div id="loadingSkeleton" class="loading-skeleton">
+  <div class="skeleton-logo"></div>
+  <div class="skeleton-hero">
+    <div class="skeleton-title"></div>
+    <div class="skeleton-subtitle"></div>
+  </div>
+</div>
+
+<!-- Canvas for animated background -->
+<canvas id="bgCanvas"></canvas>
+
+<!-- NAVBAR -->
+<nav>
+  <div class="logo" id="animatedLogo">&gt;_ root@HS</div>
+  <div class="hamburger" id="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  <div class="nav-links" id="navLinks">
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#experience">Experience</a>
+    <a href="#education">Education</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header>
+  <h1>&gt; Harsh Sapariya<span class="cursor"></span></h1>
+  <p id="typingText"></p>
+  <div class="header-buttons">
+    <a href="assets/resume.pdf" download class="btn">Download Resume</a>
+  </div>
+</header>
+
+<!-- ABOUT -->
+<section id="about">
+  <h2>About Me</h2>
+  <div class="card">
+    <p>
+      I am a passionate cybersecurity enthusiast with a strong focus on
+      Vulnerability Assessment and Penetration Testing (VAPT). I enjoy
+      understanding how systems work, identifying security weaknesses, and
+      analyzing how attackers exploit real-world applications and networks.
+    </p>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <h2>Skills</h2>
+  <div class="card">
+    <h3 class="skill-title">Technical Skills</h3>
+    <div class="skills">
+      <span>Web Application Security</span>
+      <span>Network Security</span>
+      <span>Penetration Testing</span>
+      <span>Vulnerability Assessment</span>
+      <span>Digital Forensics</span>
+      <span>Malware Analysis</span>
+    </div>
+  </div>
+  <div class="card">
+    <h3 class="skill-title">Tools</h3>
+    <div class="skills">
+      <span>Burp Suite</span>
+      <span>Nmap</span>
+      <span>Metasploit</span>
+      <span>OWASP ZAP</span>
+      <span>Wireshark</span>
+      <span>SQLmap</span>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <h2>Experience</h2>
+  <div class="experience-grid">
+
+    <div class="exp-card">
+      <h3>Application Security & VAPT Intern</h3>
+      <div class="exp-year">Dec 2024 - Jul 2025</div>
+      <span class="exp-org">Invesics Cyber Forensics</span>
+      <ul>
+        <li>Performed application-level penetration testing using OWASP ZAP and Burp Suite.</li>
+        <li>Identified and documented security issues with proof-of-concept evidence.</li>
+        <li>Collaborated with the team to simulate cyberattack scenarios and strengthen incident response workflows.</li>
+      </ul>
+    </div>
+
+    <div class="exp-card">
+      <h3>Cybersecurity Intern</h3>
+      <div class="exp-year">Jul 2024 - Aug 2024</div>
+      <span class="exp-org">Infopercept Consulting Pvt. Ltd.</span>
+      <ul>
+        <li>Gained practical knowledge of the incident response lifecycle and threat detection techniques.</li>
+        <li>Used Wazuh for continuous monitoring and analysis of system logs to identify suspicious activity.</li>
+        <li>Assisted in improving detection and alert correlation processes within the SOC environment.</li>
+      </ul>
+    </div>
+
+    <div class="exp-card">
+      <h3>Cybersecurity Intern</h3>
+      <div class="exp-year">Jul 2023 - Aug 2023</div>
+      <span class="exp-org">Tech Defence Pvt. Ltd.</span>
+      <ul>
+        <li>Conducted web application assessments aligned with OWASP Top 10, using Burp Suite and manual testing methods.</li>
+        <li>Participated in tabletop exercises simulating red-team and blue-team defense scenarios to enhance attack response skills.</li>
+        <li>Documented key findings and suggested improvements to strengthen network and application security posture.</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education">
+  <h2>Education</h2>
+  <div class="education-wrapper">
+
+    <div class="edu-item">
+      <div class="edu-dot"></div>
+      <div class="edu-card">
+        <h3>BTech in Computer Science Engineering Specialisation in Cyber Security</h3>
+        <span class="edu-meta">Silver Oak University</span>
+        <div class="edu-year">2021 - 2025</div>
+        <p>CGPA: <strong>9.30</strong></p>
+      </div>
+    </div>
+
+    <div class="edu-item">
+      <div class="edu-dot"></div>
+      <div class="edu-card">
+        <h3>Class XII</h3>
+        <span class="edu-meta">Sanskar Bharti Vidhyalay</span>
+        <div class="edu-year">2021</div>
+      </div>
+    </div>
+
+    <div class="edu-item">
+      <div class="edu-dot"></div>
+      <div class="edu-card">
+        <h3>Class X</h3>
+        <span class="edu-meta">Citizen School</span>
+        <div class="edu-year">2019</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <h2>Projects</h2>
+
+  <div class="project-card">
+    <h3>🛠 Reconnaissance Extension Tool</h3>
+    <span class="project-tech">Tech: JavaScript, Browser Extension</span>
+    <ul>
+      <li>Developed a browser extension to automate reconnaissance tasks: detect APIs, identify basic SQL injection points, perform technology fingerprinting, enumerate subdomains, and test host connectivity.</li>
+      <li>The tool reduced manual recon time and improved attack surface mapping during VAPT.</li>
+    </ul>
+  </div>
+
+  <div class="project-card">
+    <h3>🔐 Web Application Security Lab</h3>
+    <span class="project-tech">Tech: DVWA, Metasploit, Nmap, Nikto, OWASP ZAP</span>
+    <ul>
+      <li>Built a local test environment using DVWA and Metasploit to practice exploiting and patching OWASP Top 10 vulnerabilities.</li>
+      <li>Automated vulnerability scanning using Nmap, Nikto, and OWASP ZAP.</li>
+    </ul>
+  </div>
+
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <h2>Contact</h2>
+  <div class="card">
+    <p>GitHub: <a href="https://github.com/harshsapariya" target="_blank">github.com/harshsapariya</a></p>
+    <p>LinkedIn: <a href="https://www.linkedin.com/in/harshsapariya" target="_blank">linkedin.com/in/harshsapariya</a></p>
+
+    <button class="btn-portfolio" id="openModal">Send a Message</button>
+  </div>
+</section>
+
+<!-- MODAL -->
+<div id="contactModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h3>Send a Message</h3>
+
+<!-- Status messages -->
+    <p id="formStatus" class="form-status"></p>
+
+    <form id="contactForm" autocomplete="off">
+
+      <!-- 🔒 Honeypot (hidden from humans) -->
+      <input type="text" id="company" name="company" tabindex="-1" autocomplete="off" style="display:none;">
+
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="message">Message</label>
+      <textarea id="message" name="message" rows="4" required></textarea>
+
+      <button type="submit" class="btn-portfolio">Send</button>
+    </form>
+  </div>
+</div>
+
+<footer>
+  <p>&copy; Harsh Sapariya | Security Portfolio</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>
